@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
+    <div class="container mx-auto p-6">
+        <!-- Hero Section -->
+        <section class="text-center py-10">
+            <img src="Curriculum foto.webp" alt="Foto de Perfil" class="mx-auto w-32 h-32 rounded-full shadow-lg">
+            <h1 class="text-4xl font-bold mt-4">Nombre Profesional</h1>
+            <p class="text-xl text-gray-500 dark:text-gray-400">Rol Profesional - Especialización</p>
+        </section>
+        
+        <!-- Sobre Mí -->
+        <section class="my-10">
+            <h2 class="text-2xl font-semibold">Sobre Mí</h2>
+            <p class="mt-2">Breve descripción sobre experiencia, habilidades y enfoque profesional.</p>
+        </section>
+
+        <!-- Habilidades -->
+        <section class="my-10">
+            <h2 class="text-2xl font-semibold">Habilidades</h2>
+            <div class="flex gap-4 mt-4">
+                <span class="bg-gray-200 dark:bg-gray-700 p-2 rounded">HTML</span>
+                <span class="bg-gray-200 dark:bg-gray-700 p-2 rounded">CSS</span>
+                <span class="bg-gray-200 dark:bg-gray-700 p-2 rounded">JavaScript</span>
+            </div>
+        </section>
+
+        <!-- Experiencia Profesional -->
+        <section class="my-10">
+            <h2 class="text-2xl font-semibold">Experiencia Profesional</h2>
+            <ul class="mt-4">
+                <li class="mb-2"><strong>Empresa XYZ</strong> - Cargo (Año - Año)</li>
+                <li class="mb-2"><strong>Empresa ABC</strong> - Cargo (Año - Año)</li>
+            </ul>
+        </section>
+
+        <!-- Contacto -->
+        <section class="my-10 text-center">
+            <h2 class="text-2xl font-semibold">Contacto</h2>
+            <div class="mt-4">
+                <a href="#" class="mx-2 text-blue-500">LinkedIn</a>
+                <a href="#" class="mx-2 text-gray-500">GitHub</a>
+                <a href="#" class="mx-2 text-blue-400">Twitter</a>
+            </div>
+        </section>
+
+        <!-- Modo Oscuro/Claro -->
+        <div class="text-center mt-6">
+            <button id="toggleTheme" class="px-4 py-2 bg-gray-300 dark:bg-gray-600 rounded">Modo Oscuro/Claro</button>
+        </div>
+    </div>
+
+    <script>
+        const toggleTheme = document.getElementById('toggleTheme');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark');
+        }
+
+        toggleTheme.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>
